@@ -1,10 +1,16 @@
+import React from "react";
+import "./Features.scss";
+import logoChat from "../../imgReact/icon-chat.png";
+import logoMoney from "../../imgReact/icon-money.png";
+import logoSecurity from "../../imgReact/icon-security.png";
+
 function Features (){
     return(
-        <section className="features">
+        <section className="feature">
             <h2 className="sr-only">Features</h2>
             <div className="feature-item">
                 <img
-                    src="../../imgReact/icon-chat.png"
+                    src={logoChat}
                     alt="Chat Icon"
                     className="feature-icon"    
                 />
@@ -16,7 +22,7 @@ function Features (){
             </div>
             <div className="feature-item">
                 <img
-                    src="../../imgReact/icon-money.png"
+                    src={logoMoney}
                     alt="Chat Icon"
                     className="feature-icon"
                 />
@@ -27,7 +33,7 @@ function Features (){
             </div>
             <div className="feature-item">
                 <img
-                    src="../../imgReact/icon-security.png"
+                    src={logoSecurity}
                     alt="Chat Icon"
                     className="feature-icon"
                 />

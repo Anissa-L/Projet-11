@@ -1,4 +1,4 @@
-.features {
+.feature {
   display: flex;
   flex-direction: column;
   @media (min-width: 920px) {
@@ -21,6 +21,7 @@
       font-size: 1.25rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
+      margin-top: 6.5%; //ajout
     }
   }
 }
