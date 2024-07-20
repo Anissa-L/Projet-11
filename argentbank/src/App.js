@@ -21,8 +21,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      {/* Footer présent dans toutes les pages */}
       <Footer />
+      {/* Footer présent dans toutes les pages */}
     </Router>
   );
 }
