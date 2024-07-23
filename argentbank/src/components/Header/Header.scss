@@ -20,6 +20,10 @@
     &:hover {
       text-decoration: underline;
     }
+
+    &-user {
+      margin-right: 12px;
+    }
   }
 
   &-logo {
@@ -34,5 +38,8 @@
 
   &-icon-user {
     margin-right: 0.3rem;
+  }
+  &-icon-sign-out {
+    margin-right: 5px;
   }
 }
