@@ -14,15 +14,19 @@ function App() {
   return (
     <Router>
       {/*gérer la route et la navigation*/}
-      {/* Header présent dans toutes les pages */}
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-      <Footer />
-      {/* Footer présent dans toutes les pages */}
+      <div className="app-container">
+        {/* Header présent dans toutes les pages */}
+        <Header />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
+        <Footer />
+        {/* Footer présent dans toutes les pages */}
+      </div>
     </Router>
   );
 }
