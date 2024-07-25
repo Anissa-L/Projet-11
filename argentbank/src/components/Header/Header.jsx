@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink, useLocation} from "react-router-dom";
-import "./Header.scss";
 import logo from "../../imgReact/argentBankLogo.png"; // Importez l'image
 
 
