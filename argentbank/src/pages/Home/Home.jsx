@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner/Banner";
 import Feature from "../../components/Feature/Feature";
-import HomeBannerImage from "../../imgReact/bank-treeOpti.jpeg";
+import HomeBannerImage from "../../imgReact/bank-treeOpti.webp";
 import logoChat from "../../imgReact/icon-chat.png";
 import logoMoney from "../../imgReact/icon-money.png";
 import logoSecurity from "../../imgReact/icon-security.png";
