@@ -1,5 +1,5 @@
 // rajout
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setLogin } from "../../redux/reducers/authSlice";
@@ -9,13 +9,24 @@ function Login (){
     // États locaux pour les champs du formulaire et les erreurs
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    //const [checkbox, setCheckbox] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
     const [error, setError] = useState(null);
 
     // Utilisation de useNavigate pour la navigation après connexion
     const navigate = useNavigate();
     // Utilisation de useDispatch pour envoyer des actions Redux
     const dispatch = useDispatch();
+
+    // Vérifier si l'email et le mot de passe sont déjà présents dans le local storage
+    useEffect(() => {
+        const storedEmail = localStorage.getItem("email");
+        const storedPassword = localStorage.getItem("password");
+        if (storedEmail && storedPassword) {
+            setEmail(storedEmail);
+            setPassword(storedPassword);
+            setRememberMe(true);
+        }
+    }, []);
 
     // Fonction pour gérer la soumission du formulaire de connexion
     const fetchLogin = async (e) => {
@@ -31,6 +42,14 @@ function Login (){
             const data = await response.json(); // Récupération des données de la réponse
             const token = data.body.token; // Extraction du token de la réponse
             dispatch(setLogin({token})); // Envoi de l'action setLogin avec le token
+            // Stocker l'email et le mot de passe dans le local storage si "Remember Me" est coché
+            if (rememberMe) {
+                localStorage.setItem("email", email);
+                localStorage.setItem("password", password);
+            } else {
+                localStorage.removeItem("email");
+                localStorage.removeItem("password");
+            }
             navigate("/profile"); // Navigation vers la page de profil après connexion
         }
             catch (err) {
@@ -60,7 +79,8 @@ function Login (){
                     /> {/*Met à jour l'état local password lorsque l'utilisateur saisit du texte. */ }
                 </div>
                 <div className="input-remember">
-                    <input type="checkbox" id="remember-me" />
+                    <input type="checkbox" id="remember-me" checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)} />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
                 {error && <p className="error">{error}</p>} {/*Affiche un paragraphe contenant le message d'erreur si error n'est pas null. */}
