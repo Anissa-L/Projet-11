@@ -37,12 +37,35 @@
 }
 .form-input-user {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-input-profile {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .input-user {
-  width: 30%;
+  width: 58%;
+  padding: 3px;
+}
+
+.button-profile {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  &-form {
+    width: 15%;
+    padding: 10px;
+    background: #00bc77;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+  }
 }

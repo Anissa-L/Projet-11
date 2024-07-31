@@ -83,7 +83,7 @@ function Login (){
                             onChange={(e) => setRememberMe(e.target.checked)} />
                     <label htmlFor="remember-me">Remember me</label>
                 </div>
-                {error && <p className="error">{error}</p>} {/*Affiche un paragraphe contenant le message d'erreur si error n'est pas null. */}
+                {error && <p className="input-error">{error}</p>} {/*Affiche un paragraphe contenant le message d'erreur si error n'est pas null. */}
                 <button className="sign-in-button" type="submit">Sign In</button>
                 </form> 
             </section>

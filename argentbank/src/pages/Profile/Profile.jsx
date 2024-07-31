@@ -73,17 +73,40 @@ function Profile (){
                 {!editMode ? (
                     <button className="edit-button" onClick={handleEdit}>Edit Name</button>
                 ) : (
-                    <form onSubmit={handleSave}>
+                    <form onSubmit={handleSave} className="form-profile">
                         <div className="form-input-user">
-                            <input
+                            <div className="form-input-profile"> 
+                                <label htmlFor="userName">User name:</label>
+                                <input
                                 className="input-user"
                                 type="text"
                                 value={userName}
                                 onChange={(e) => setUserName(e.target.value)}
                             />
+                            </div>
+                            <div className="form-input-profile">
+                            <label htmlFor="first Name">First name:</label>
+                                <input
+                                className="input-user"
+                                type="text"
+                                value={profile.firstName}
+                                disabled
+                            />
+                            </div>
+                            <div className="form-input-profile">
+                            <label htmlFor="last Name">Last name:</label>
+                                <input
+                                className="input-user"
+                                type="text"
+                                value={profile.lastName}
+                                disabled
+                            />
+                            </div>
                         </div>
-                        <button type="submit" className="save-button">Save</button>
-                        <button type="button" className="cancel-button" onClick={handleCancel}>Cancel</button>
+                        <div className="button-profile">
+                        <button type="submit" className="button-profile-form">Save</button>
+                        <button type="button" className="button-profile-form" onClick={handleCancel}>Cancel</button>
+                        </div>    
                     </form>
                 )}
             </div>
