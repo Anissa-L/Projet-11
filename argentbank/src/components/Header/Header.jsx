@@ -3,7 +3,7 @@ import { NavLink} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogout } from "../../redux/reducers/authSlice";
 import { resetProfile } from "../../redux/reducers/profileSlice";
-import logo from "../../imgReact/argentBankLogo.png"; // Importez l'image
+
 
 
 function Header (){
@@ -22,7 +22,7 @@ function Header (){
     return(
         <header className="main-nav">
             <NavLink to="/" className="main-nav-logo">
-                <img src={logo} alt="Argent Bank Logo" className="main-nav-logo-image"/>
+                <img src={`${process.env.PUBLIC_URL}/imgReact/argentBankLogo.png`} alt="Argent Bank Logo" className="main-nav-logo-image"/>
                 <h1 className="sr-only">Argent Bank</h1>
             </NavLink>
             {token ? (
