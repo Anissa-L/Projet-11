@@ -36,7 +36,7 @@ function Login (){
             const response = await fetch("http://localhost:3001/api/v1/user/login", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"}, // En-tête de la requête
-                body: JSON.stringify ({email, password }), // Corps de la requête avec email et mot de passe
+                body: JSON.stringify ({email, password }), // Corps de la requête avec email et mot de passe(identifiant de l'utilisateur)
             });
 
             const data = await response.json(); // Récupération des données de la réponse

@@ -32,7 +32,7 @@ paths:
         - Bearer: []
       tags:
         - User Module
-      summary: Account Transactions API
+      summary: Account Transactions API, current month
       description: API for getting accounts's transactions
       parameters:
         - in: path
